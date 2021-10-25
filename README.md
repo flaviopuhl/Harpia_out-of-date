@@ -3,7 +3,7 @@ ESP32 CAM + Firebase + Thinger
 
 /*********
  * HARPIA
-  ESP32 CAM save pic to SD ................................................. [DONE] \n
+  ESP32 CAM save pic to SD ................................................. [DONE]
   eval 1: Connect to internet .............................................. [DONE]
   eval 2: Move image code to a subroutine .................................. [DONE]
   eval 3: Add NTP, assign to file name, remove EEPROM feat ................. [DONE]
