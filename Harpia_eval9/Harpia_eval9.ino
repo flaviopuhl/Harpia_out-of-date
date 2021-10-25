@@ -111,10 +111,6 @@ bool taskCompleted = false;                                   // Firebase
 
 int error_counter = 0;                                        // General error counter
 
-unsigned long previousMillis_MainLoop = 0;                    // Main loop timer
-unsigned long previousMillis_SecLoop = 0;                     // Secondary loop timer
-unsigned long previousMillis_screenLoop = 0;                  // Screen loop timer
-
 String ino = __FILE__;                                        // getSWversion()
 
 uint32_t cardTotalBytes;                                      // SD card health
@@ -281,18 +277,13 @@ void loop() {
 
   runner.execute();
   thing.handle();
-  //unsigned long currentMillis = millis();
  
-  if(error_counter>=100){               						        // if error counting exceeds threshold, then restart the system         
-    ESP.restart();
-  }
+  if(error_counter>=60){ ESP.restart();  }					        // if error counting exceeds threshold, then restart the system         
 
 }
 
 
 void screenLoop() {
-    
-    //previousMillis_screenLoop = currentMillis;
    
     display.init();                                         // Display init to clear it
     display.flipScreenVertically();  
