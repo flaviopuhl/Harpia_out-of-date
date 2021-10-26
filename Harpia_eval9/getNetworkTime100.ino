@@ -16,7 +16,7 @@ void DateandTimerequest(){
 
     strftime(monthDay,3, "%d", &timeinfo);
     strftime(currentMonth,3, "%m", &timeinfo);
-    strftime(currentYear,3, "%Y", &timeinfo);
+    strftime(currentYear,3, "%y", &timeinfo);
     strftime(currentHour,3, "%H", &timeinfo);
     strftime(currentMin,3, "%M", &timeinfo);
     strftime(currentSec,3, "%S", &timeinfo);
