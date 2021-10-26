@@ -13,8 +13,8 @@ ESP32 CAM + Firebase + Thinger
   eval 7: Add BME280 feat. ................................................. [DONE]
   eval 8: Add Thinger ...................................................... [DONE]
   eval 9: Add scheduler .................................................... [DONE]
-  eval 10: Replace scheduler by RTOS .......................................
-  eavl 11: Add Crypto Mining ...............................................
+  eval 10: Replace scheduler by RTOS ....................................... [TBD]
+  eval 11: Add Crypto Mining ............................................... [TBD]
   
 *********/
 
