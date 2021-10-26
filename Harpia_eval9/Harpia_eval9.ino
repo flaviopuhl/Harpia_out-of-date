@@ -132,12 +132,12 @@ float ExtPressPa;                                             // get ext temp
 ThingerESP32 thing(USERNAME, DEVICE_ID, DEVICE_CREDENTIAL);   // Thinger
 
 Scheduler runner;                                             // Create the Scheduler that will be in charge of managing the tasks
-Task task1(1*60*1000, TASK_FOREVER, &getWifiStatus);          // Create the task indicating that it runs every 500 milliseconds, forever, and call the led_blink function
-Task task2(2*60*1000, TASK_FOREVER, &DateandTimerequest);     // Create the task indicating that it runs every 500 milliseconds, forever, and call the led_blink function
-Task task3(1*60*1000, TASK_FOREVER, &updateBME180);           // Create the task indicating that it runs every 500 milliseconds, forever, and call the led_blink function
-Task task4(10*60*1000, TASK_FOREVER, &takeImage);             // Create the task indicating that it runs every 500 milliseconds, forever, and call the led_blink function
-Task task5(30*60*1000, TASK_FOREVER, &CardHealth);            // Create the task indicating that it runs every 500 milliseconds, forever, and call the led_blink function
-Task task6(1*1*3000, TASK_FOREVER, &screenLoop);              // Create the task indicating that it runs every 500 milliseconds, forever, and call the led_blink function
+Task task1(1*60*1000, TASK_FOREVER, &getWifiStatus);          // Create the task 
+Task task2(2*60*1000, TASK_FOREVER, &DateandTimerequest);     // Create the task
+Task task3(1*60*1000, TASK_FOREVER, &updateBME180);           // Create the task
+Task task4(10*60*1000, TASK_FOREVER, &takeImage);             // Create the task 
+Task task5(30*60*1000, TASK_FOREVER, &CardHealth);            // Create the task 
+Task task6(1*1*3000, TASK_FOREVER, &screenLoop);              // Create the task 
 
 
 /*************************************************************************************
@@ -145,12 +145,12 @@ Task task6(1*1*3000, TASK_FOREVER, &screenLoop);              // Create the task
 *************************************************************************************/
 
 void setup() {
-  WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); 				          //disable brownout detector
+  WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); 		       //disable brownout detector
  
   Serial.begin(115200);
-    delay(1000);                                  			      // delay to stabilize the serial comm
+    delay(1000);                                  	      // delay to stabilize the serial comm
 
-  configTime(-10800, 0, "pool.ntp.org");          			      // NPT
+  configTime(-10800, 0, "pool.ntp.org");          	      // NPT
 
   display.displayOn();                                        // OLED Display
   display.init();                                             // OLED Display
@@ -167,7 +167,7 @@ void setup() {
       delay(1000);
   display.displayOff();                                       // Turn off display because it is affecting wifi coonection
   
-  wifiConnect();                                  			      // Connect to wifi network
+  wifiConnect();                                  	      // Connect to wifi network
 
     display.displayOn();
     display.drawString(0, 13, "Wifi Connected");
@@ -176,13 +176,13 @@ void setup() {
 
   Serial.printf("Firebase Client v%s\n\n", FIREBASE_CLIENT_VERSION); // Firebase
 
-  config.api_key = API_KEY;                       			      // Firebase: Assign the api key (required)
-  auth.user.email = USER_EMAIL;                   			      // Firebase: Assign the user sign in credentials
+  config.api_key = API_KEY;                       	      // Firebase: Assign the api key (required)
+  auth.user.email = USER_EMAIL;                   	      // Firebase: Assign the user sign in credentials
   auth.user.password = USER_PASSWORD;
-  config.token_status_callback = tokenStatusCallback; 		    // Firebase: Assign the callback function for the long running token generation task
-															                                // see addons/TokenHelper.h
-  Firebase.begin(&config, &auth);                 			      // Firebase
-  Firebase.reconnectWiFi(true);                   			      // Firebase                
+  config.token_status_callback = tokenStatusCallback; 	      // Firebase: Assign the callback function for the long running token generation task
+							      // see addons/TokenHelper.h
+  Firebase.begin(&config, &auth);                 	      // Firebase
+  Firebase.reconnectWiFi(true);                   	      // Firebase                
   
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
@@ -207,7 +207,7 @@ void setup() {
   config.pixel_format = PIXFORMAT_JPEG; 
   
   if(psramFound()){
-    config.frame_size = FRAMESIZE_UXGA; 						          // FRAMESIZE_ + QVGA|CIF|VGA|SVGA|XGA|SXGA|UXGA
+    config.frame_size = FRAMESIZE_UXGA; 		       // FRAMESIZE_ + QVGA|CIF|VGA|SVGA|XGA|SXGA|UXGA
     config.jpeg_quality = 10;
     config.fb_count = 2;
   } else {
@@ -278,7 +278,7 @@ void loop() {
   runner.execute();
   thing.handle();
  
-  if(error_counter>=60){ ESP.restart();  }					        // if error counting exceeds threshold, then restart the system         
+  if(error_counter>=60){ ESP.restart();  }		    // if error counting exceeds threshold, then restart the system         
 
 }
 
