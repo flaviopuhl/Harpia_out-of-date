@@ -20,3 +20,14 @@ ESP32 CAM + Firebase + Thinger
 
 Link to external access
 https://console.thinger.io/#!/dashboards/IOT_Home_Official?authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJEYXNoYm9hcmRfSU9UX0hvbWVfT2ZmaWNpYWwiLCJ1c3IiOiJmcHVobCJ9.PyrTuisziWx01Gg-qIWxe1JhHfBHGnt1cwbwvLkXPQ4
+
+Usefull links ad informations
+https://github.com/fustyles/Arduino/blob/master/ESP32-CAM_Firebase/ESP32-CAM_Firebase.ino
+https://randomnerdtutorials.com/esp32-firebase-realtime-database/
+https://github.com/mobizt/Firebase-ESP-Client
+https://randomnerdtutorials.com/esp32-firebase-web-app/
+https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/
+https://circuitdigest.com/microcontroller-projects/sending-temperature-and-humidity-data-to-firebase-database-using-esp8266
+https://medium.com/@o.lourme/our-iot-journey-through-esp8266-firebase-angular-and-plotly-js-part-1-a07db495ac5f
+https://www.electrosoftcloud.com/en/arduino-taskscheduler-no-more-millis-or-delay/
+https://github.com/arkhipenko/TaskScheduler/wiki/Concept-of-Task-and-Cooperative-Task-Scheduling#task
